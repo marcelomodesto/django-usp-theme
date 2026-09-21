@@ -1,0 +1,53 @@
+/* ============================================
+   USP Theme — Base
+   ============================================ */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: var(--usp-font-sans);
+  font-size: var(--usp-text-base);
+  line-height: var(--usp-leading-normal);
+  color: var(--usp-color-ink);
+  background-color: var(--usp-color-bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ---------- Typography ---------- */
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  font-weight: var(--usp-weight-semibold);
+  line-height: var(--usp-leading-tight);
+  color: var(--usp-color-ink);
+  text-wrap: balance;
+}
+
+h1 { font-size: var(--usp-text-4xl); }
+h2 { font-size: var(--usp-text-3xl); }
+h3 { font-size: var(--usp-text-2xl); }
+h4 { font-size: var(--usp-text-xl); }
+h5 { font-size: var(--usp-text-lg); }
+h6 { font-size: var(--usp-text-base); }
+
+p {
+  text-wrap: pretty;
+}
+
+.text-muted {
+  color: var(--usp-color-ink-muted) !important;
+}
+
+.text-secondary {
+  color: var(--usp-color-ink-secondary) !important;
+}
+
+small {
+  font-size: var(--usp-text-xs);
+}

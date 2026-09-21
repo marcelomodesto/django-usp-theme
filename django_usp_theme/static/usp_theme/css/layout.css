@@ -1,0 +1,196 @@
+/* ============================================
+   USP Theme — Layout
+   ============================================ */
+
+/* ---------- Container ---------- */
+
+.container {
+  max-width: 1200px;
+  padding-inline: 1.05rem;
+}
+
+main {
+  padding-block: var(--usp-space-8);
+}
+
+/* ---------- Page Header ---------- */
+
+.page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--usp-space-6);
+}
+
+.page-header h3 {
+  margin: 0;
+}
+
+/* ---------- Content Card ---------- */
+
+.content-card {
+  background: var(--usp-color-surface-raised);
+  border: 1px solid var(--usp-color-border);
+  border-radius: var(--usp-radius-lg);
+  box-shadow: var(--usp-shadow-sm);
+}
+
+.content-card-header {
+  padding: var(--usp-space-4) var(--usp-space-6);
+  border-bottom: 1px solid var(--usp-color-border);
+  background: var(--usp-color-surface);
+}
+
+.content-card-header h3,
+.content-card-header h4 {
+  margin: 0;
+  font-size: var(--usp-text-lg);
+  font-weight: var(--usp-weight-semibold);
+  color: var(--usp-color-ink);
+}
+
+.content-card-body {
+  padding: var(--usp-space-6);
+}
+
+
+/* ---------- Header ---------- */
+
+.usp-header {
+  background: var(--usp-color-bg);
+}
+
+.usp-header .container-fluid {
+  display: flex;
+  align-items: center;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-block: var(--usp-space-3);
+  padding-inline: 1.05rem;
+}
+
+.usp-header img {
+  height: 56px;
+}
+
+.usp-header img + img {
+  height: 32px;
+  margin-left: var(--usp-space-4);
+}
+
+.usp-header-strip {
+  height: 30px;
+  background: url('../img/bg-headtop.gif') repeat-x;
+  background-size: auto 100%;
+}
+
+
+/* ---------- Navigation ---------- */
+
+.usp-nav {
+  background: var(--usp-color-surface);
+  border-bottom: 1px solid var(--usp-color-border);
+}
+
+.usp-nav .container-fluid {
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: var(--usp-space-8);
+}
+
+.usp-nav .navbar-brand {
+  color: var(--usp-color-primary);
+  font-size: var(--usp-text-lg);
+  font-weight: var(--usp-weight-bold);
+  text-decoration: none;
+  padding: var(--usp-space-3) 0;
+}
+
+.usp-nav .navbar-brand:hover {
+  color: var(--usp-color-primary-hover);
+}
+
+.usp-nav .navbar-nav {
+  display: flex;
+  flex-direction: row;
+  gap: var(--usp-space-1);
+}
+
+.usp-nav .nav-link {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--usp-space-2);
+  padding: var(--usp-space-3) var(--usp-space-4);
+  color: var(--usp-color-ink-secondary);
+  font-size: var(--usp-text-sm);
+  font-weight: var(--usp-weight-medium);
+  text-decoration: none;
+  border-radius: var(--usp-radius-md);
+  transition: background var(--usp-transition-fast), color var(--usp-transition-fast);
+}
+
+.usp-nav .nav-link:hover {
+  background: var(--usp-color-surface);
+  color: var(--usp-color-primary);
+}
+
+.usp-nav .nav-link.active {
+  background: var(--usp-color-surface);
+  color: var(--usp-color-primary);
+  font-weight: var(--usp-weight-semibold);
+}
+
+.usp-nav .nav-item.dropdown {
+  position: relative;
+}
+
+.usp-nav .nav-item.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  right: 0;
+  min-width: 220px;
+  background: var(--usp-color-bg);
+  border: 1px solid var(--usp-color-border);
+  border-radius: var(--usp-radius-md);
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  padding: var(--usp-space-2) 0;
+  z-index: 1000;
+  list-style: none;
+  margin: 0;
+}
+
+.usp-nav .nav-item.dropdown.show .dropdown-menu,
+.usp-nav .nav-item.dropdown:hover .dropdown-menu {
+  display: block;
+}
+
+.usp-nav .nav-item.dropdown .dropdown-item {
+  display: block;
+  padding: var(--usp-space-2) var(--usp-space-4);
+  color: var(--usp-color-ink-secondary);
+  font-size: var(--usp-text-sm);
+  text-decoration: none;
+  transition: background var(--usp-transition-fast), color var(--usp-transition-fast);
+}
+
+.usp-nav .nav-item.dropdown .dropdown-item:hover {
+  background: var(--usp-color-surface);
+  color: var(--usp-color-primary);
+}
+
+.usp-nav .nav-user {
+  display: flex;
+  align-items: center;
+  gap: var(--usp-space-3);
+  margin-left: auto;
+  font-size: var(--usp-text-sm);
+  color: var(--usp-color-ink-secondary);
+}
+
+.usp-nav .nav-user .btn {
+  font-size: var(--usp-text-xs);
+}

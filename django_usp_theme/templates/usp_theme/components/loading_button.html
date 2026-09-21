@@ -1,0 +1,8 @@
+{% load static %}
+<button type="{{ type|default:'submit' }}"
+        class="btn {{ button_class|default:'btn-primary' }} {% if loading %}btn-loading{% endif %}"
+        {% if disabled %}disabled{% endif %}
+        {% block button_attrs %}{% endblock %}>
+    {% if not loading %}<i class="bi {{ icon }}"></i>{% endif %}
+    {% block button_text %}{{ text }}{% endblock %}
+</button>

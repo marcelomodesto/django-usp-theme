@@ -1,0 +1,10 @@
+<div class="content-card">
+    {% if card_title %}
+    <div class="content-card-header">
+        <h4>{{ card_title }}</h4>
+    </div>
+    {% endif %}
+    <div class="content-card-body">
+        {% block card_content %}{% endblock %}
+    </div>
+</div>

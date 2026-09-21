@@ -1,0 +1,86 @@
+/* ============================================
+   USP Theme — Design Tokens
+   ============================================ */
+
+:root {
+  /* Primary */
+  --usp-color-primary: #1094ab;
+  --usp-color-primary-hover: #0d7a8f;
+  --usp-color-primary-active: #0a6172;
+  --usp-color-primary-text: #ffffff;
+
+  /* Accent */
+  --usp-color-accent: #fcb421;
+  --usp-color-accent-hover: #e5a31d;
+
+  /* Secondary */
+  --usp-color-secondary: #64c4d2;
+  --usp-color-secondary-hover: #4fb8c8;
+
+  /* Surface scale */
+  --usp-color-bg: #ffffff;
+  --usp-color-surface: #f4f7f8;
+  --usp-color-surface-raised: #ffffff;
+  --usp-color-border: #dce3e5;
+  --usp-color-border-strong: #b8c7cb;
+
+  /* Ink scale */
+  --usp-color-ink: #1a2b32;
+  --usp-color-ink-secondary: #3d5a66;
+  --usp-color-ink-muted: #6b8a94;
+
+  /* Semantic */
+  --usp-color-success: #2e7d5a;
+  --usp-color-success-text: #ffffff;
+  --usp-color-danger: #c0392b;
+  --usp-color-danger-text: #ffffff;
+  --usp-color-warning: #fcb421;
+  --usp-color-warning-text: #1a2b32;
+  --usp-color-info: #64c4d2;
+  --usp-color-info-text: #1a2b32;
+
+  /* Typography */
+  --usp-font-sans: 'Open Sans', system-ui, -apple-system, 'Segoe UI', Roboto, sans-serif;
+  --usp-font-mono: 'SFMono-Regular', Menlo, Consolas, monospace;
+
+  --usp-text-xs: 0.8125rem;
+  --usp-text-sm: 0.9375rem;
+  --usp-text-base: 1rem;
+  --usp-text-lg: 1.125rem;
+  --usp-text-xl: 1.25rem;
+  --usp-text-2xl: 1.375rem;
+  --usp-text-3xl: 1.625rem;
+  --usp-text-4xl: 2rem;
+
+  --usp-leading-tight: 1.25;
+  --usp-leading-normal: 1.5;
+
+  --usp-weight-normal: 400;
+  --usp-weight-medium: 500;
+  --usp-weight-semibold: 600;
+  --usp-weight-bold: 700;
+
+  /* Spacing */
+  --usp-space-1: 0.25rem;
+  --usp-space-2: 0.5rem;
+  --usp-space-3: 0.75rem;
+  --usp-space-4: 1rem;
+  --usp-space-5: 1.25rem;
+  --usp-space-6: 1.5rem;
+  --usp-space-8: 2rem;
+  --usp-space-10: 2.5rem;
+  --usp-space-12: 3rem;
+
+  /* Radius */
+  --usp-radius-sm: 0.25rem;
+  --usp-radius-md: 0.375rem;
+  --usp-radius-lg: 0.5rem;
+
+  /* Shadows */
+  --usp-shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --usp-shadow-md: 0 1px 3px rgba(0, 0, 0, 0.1), 0 1px 2px rgba(0, 0, 0, 0.06);
+
+  /* Motion */
+  --usp-transition-fast: 150ms ease-out;
+  --usp-transition-normal: 200ms ease-out;
+}
