@@ -194,3 +194,21 @@ main {
 .usp-nav .nav-user .btn {
   font-size: var(--usp-text-xs);
 }
+
+/* ---------- Footer ---------- */
+
+.usp-footer {
+  margin-top: var(--usp-space-6);
+}
+
+.usp-footer hr {
+  margin: 0;
+}
+
+.usp-footer-copyright {
+  margin: 0;
+  padding-block: var(--usp-space-4);
+  text-align: center;
+  font-size: var(--usp-text-xs);
+  color: var(--usp-color-ink-muted);
+}
