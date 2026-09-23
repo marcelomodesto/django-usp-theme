@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "django-usp-theme"
-version = "1.0.1"
+version = "0.1.0"
 description = "Tema visual USP para aplicações Django — design system, componentes e templates reutilizáveis."
 readme = "README.md"
 license = "MIT"
