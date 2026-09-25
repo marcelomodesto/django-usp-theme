@@ -13,7 +13,8 @@
         integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet">
-    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/select2-bootstrap-5-theme@1.3.0/dist/select2-bootstrap-5-theme.min.css"
+        rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/material_blue.css" rel="stylesheet">
     <link href="{% static 'usp_theme/css/usp_theme.css' %}" rel="stylesheet">
@@ -36,45 +37,69 @@
                 {% block brand %}App{% endblock %}
             </a>
 
-            {% block nav %}{% endblock %}
+            {% load url_utils %} {# tag customizada  #}
 
-            {% block nav_user %}{% endblock %}
-        </div>
-    </nav>
+            {% block nav %}
+            {% if user.is_authenticated %}
+            <div class="navbar-nav">
+                {% block nav_items %}
+                {# Vazio por padrão. Projetos que importam este módulo #}
+                {# sobrescrevem este bloco com seus próprios itens. #}
+                {% endblock %}
+            </div>
+            {% endif %}
 
-    <main id="content">
-        <div class="container">
-            {% include "usp_theme/components/alert_messages.html" %}
-            {% block content %}{% endblock %}
-        </div>
-    </main>
+            {% block nav_user %}
+            {% if user.is_authenticated %}
+            <div class="nav-user">
+                <span>{{ user.username }}</span>
+                {% if 'logout'|url_exists %}
+                <form action="{% url 'logout' %}" method="post" class="mb-0">
+                    {% csrf_token %}
+                    <button type="submit" class="btn btn-sm btn-outline-secondary">
+                        <i class="bi bi-door-open"></i> Sair
+                    </button>
+                </form>
+                {% endif %}
+            </div>
+            {% endif %}
+            {% endblock %}
+            {% endblock %}
 
-    <footer class="usp-footer">
-        <div class="container">
-            <hr>
-            <p class="usp-footer-copyright">Copyright USPDev {% now "Y" %}</p>
-        </div>
-    </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-        crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/i18n/pt-BR.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
-    <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            flatpickr('.data-brasileira', {
-                locale: 'pt',
-                dateFormat: 'Y-m-d',
-                altInput: true,
-                altFormat: 'd/m/Y',
-            });
-        });
-    </script>
-    {% block extra_js %}{% endblock %}
+            <main id="content">
+                <div class="container">
+                    {% include "usp_theme/components/alert_messages.html" %}
+                    {% block content %}{% endblock %}
+                </div>
+            </main>
+
+            <footer class="usp-footer">
+                <div class="container">
+                    <hr>
+                    <p class="usp-footer-copyright">© {% now "Y" %} Universidade de São Paulo</p>
+                </div>
+            </footer>
+
+            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                crossorigin="anonymous"></script>
+            <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/i18n/pt-BR.js"></script>
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+            <script src="https://cdn.jsdelivr.net/npm/flatpickr/dist/l10n/pt.js"></script>
+            <script>
+                document.addEventListener('DOMContentLoaded', function () {
+                    flatpickr('.data-brasileira', {
+                        locale: 'pt',
+                        dateFormat: 'Y-m-d',
+                        altInput: true,
+                        altFormat: 'd/m/Y',
+                    });
+                });
+            </script>
+            {% block extra_js %}{% endblock %}
 </body>
 
 </html>
