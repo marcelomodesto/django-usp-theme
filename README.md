@@ -99,18 +99,16 @@ Settings nativas do Django
 
 As settings abaixo não são do tema, mas do próprio Django. Elas controlam os
 redirecionamentos do fluxo de autenticação:
-Setting	O que faz	Exemplo
+| Setting | O que faz | Exemplo |
+| :--- | :--- | :--- |
+| `LOGIN_URL` | Caminho para onde redirecionar usuários não autenticados | `'/login/'` |
+| `LOGIN_REDIRECT_URL` | Para onde ir após o login bem-sucedido | `'/'` |
+| `LOGOUT_REDIRECT_URL` | Para onde ir após o logout | `'login'` |
 
-LOGIN_URL	Caminho para onde redirecionar usuários não autenticados	'/login/'
 
-LOGIN_REDIRECT_URL	Para onde ir após o login bem-sucedido	'/'
-
-LOGOUT_REDIRECT_URL	Para onde ir após o logout	'login'
-
-Se LOGOUT_REDIRECT_URL não for definida, o Django redireciona para /admin/
+Se `LOGOUT_REDIRECT_URL` não for definida, o Django redireciona para `/admin/`
 (ou para a página de logout padrão do admin). Para voltar à tela de login após
 sair, defina:
-
 
 
 ```python
