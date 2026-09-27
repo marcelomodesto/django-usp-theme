@@ -90,18 +90,21 @@ THEME_LOGOUT_URL_NAME = os.environ.get('THEME_LOGOUT_URL_NAME', 'logout')
 ```
 
 
-    Importante: essas settings são nomes de rotas (usados em {% url %}),
-    não caminhos. Não confunda com LOGIN_URL, LOGIN_REDIRECT_URL e
-    LOGOUT_REDIRECT_URL, que são settings nativas do Django e esperam caminhos
-    (ou nomes de rota, no caso de LOGIN_REDIRECT_URL e LOGOUT_REDIRECT_URL).
+Importante: essas settings são nomes de rotas (usados em {% url %}),
+não caminhos. Não confunda com LOGIN_URL, LOGIN_REDIRECT_URL e
+LOGOUT_REDIRECT_URL, que são settings nativas do Django e esperam caminhos
+(ou nomes de rota, no caso de LOGIN_REDIRECT_URL e LOGOUT_REDIRECT_URL).
 
 Settings nativas do Django
 
 As settings abaixo não são do tema, mas do próprio Django. Elas controlam os
 redirecionamentos do fluxo de autenticação:
 Setting	O que faz	Exemplo
+
 LOGIN_URL	Caminho para onde redirecionar usuários não autenticados	'/login/'
+
 LOGIN_REDIRECT_URL	Para onde ir após o login bem-sucedido	'/'
+
 LOGOUT_REDIRECT_URL	Para onde ir após o logout	'login'
 
 Se LOGOUT_REDIRECT_URL não for definida, o Django redireciona para /admin/
