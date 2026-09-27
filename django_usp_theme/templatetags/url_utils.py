@@ -1,5 +1,6 @@
 from django import template
-from django.urls import NoReverseMatch, reverse
+from django.conf import settings
+from django.urls import reverse, NoReverseMatch
 
 register = template.Library()
 
@@ -16,3 +17,14 @@ def url_exists(url_name):
         return True
     except NoReverseMatch:
         return False
+
+
+# usp_filters.py do tema
+@register.simple_tag
+def theme_login_url_name():
+    return getattr(settings, 'THEME_LOGIN_URL_NAME', 'login')
+
+
+@register.simple_tag
+def theme_logout_url_name():
+    return getattr(settings, 'THEME_LOGOUT_URL_NAME', 'logout')
